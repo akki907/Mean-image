@@ -1,0 +1,90 @@
+<!DOCTYPE html >
+<html lang="en" ng-app="imageApp">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Web Crawler</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+</head>
+
+<body ng-controller="myCtrl" ng-cloak>
+    <nav class="navbar navbar-default" >
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"><i>Image Crawler</i></a>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse navbar_color" id="bs-example-navbar-collapse-1" >
+    </div>
+  </div>
+</nav>
+<div class="container">
+ 
+ 
+</div>
+      <div class="container margin-top">
+        <div class="col-md-12">
+            <form class="form-horizontal">
+                <div class="form-group">
+                  <label class="control-label col-sm-2" >Link:</label>
+                  <div class="col-sm-10">
+                    <input type="text" name=link class="form-control" ng-model="link" id="email" placeholder="Enter email">
+                  </div>
+                </div>
+                
+                <div class="form-group"> 
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default"  ng-click="getImage(link)"  ng-disabled="myForm.link.$invalid">  
+                     <i class="fa fa-spinner fa-spin " ng-show="loader" aria-hidden="true"></i>                  
+                      Submit</button> {{err}}
+                  </div>
+                 
+                </div>
+              </form>
+
+        </div>
+            
+        <div class="container-fluid text-center">
+            <div class="row text-center">
+              <div class="col-sm-12 col-xs-12 col-lg-12 col-md-12" ng-repeat="link in links track by $index">
+                <div class="thumbnail hovereffect">
+                  <img src="{{link}}" alt="Not A Valid link">
+                  <div class="overlay">
+                      <a class="info" href="{{link}}" download>Download Image</a>
+                  </div>
+                </div>
+                <div class="well text-justify">{{link}}</div>
+                <!-- <p class="text-justify">{{link}}</p> -->
+              </div>
+              
+          </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

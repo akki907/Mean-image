@@ -1,0 +1,22 @@
+{
+  "name": "web_crawler",
+  "version": "1.0.0",
+  "description": "web crawler in MEAN Stack",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "crawler"
+  ],
+  "author": "akash",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.5.0",
+    "cheerio": "^1.0.0-rc.2",
+    "image-scraper": "^0.2.0",
+    "node-webcrawler": "^0.8.0",
+    "request": "^2.83.0"
+  }
+}
